@@ -10,11 +10,11 @@ import SwiftData
 
 @main
 struct LifeKPIs_SwiftData_Data_ModelApp: App {
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Item.self)
+        .modelContainer(DataManager.container)
     }
 }

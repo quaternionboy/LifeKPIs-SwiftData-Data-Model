@@ -12,6 +12,7 @@
 		FBB894972A44618F003DD593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB894962A44618F003DD593 /* Assets.xcassets */; };
 		FBB8949A2A44618F003DD593 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB894992A44618F003DD593 /* Preview Assets.xcassets */; };
 		FBB8949C2A44618F003DD593 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB8949B2A44618F003DD593 /* Item.swift */; };
+		FBCF8ED32A4C89D000CA9F2C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCF8ED22A4C89D000CA9F2C /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		FBB894962A44618F003DD593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBB894992A44618F003DD593 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBB8949B2A44618F003DD593 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FBCF8ED22A4C89D000CA9F2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB894922A44618E003DD593 /* LifeKPIs_SwiftData_Data_ModelApp.swift */,
+				FBCF8ED22A4C89D000CA9F2C /* DataManager.swift */,
 				FBB894942A44618E003DD593 /* ContentView.swift */,
 				FBB894962A44618F003DD593 /* Assets.xcassets */,
 				FBB8949B2A44618F003DD593 /* Item.swift */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB894952A44618E003DD593 /* ContentView.swift in Sources */,
+				FBCF8ED32A4C89D000CA9F2C /* DataManager.swift in Sources */,
 				FBB8949C2A44618F003DD593 /* Item.swift in Sources */,
 				FBB894932A44618E003DD593 /* LifeKPIs_SwiftData_Data_ModelApp.swift in Sources */,
 			);
