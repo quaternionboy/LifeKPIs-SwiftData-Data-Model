@@ -8,20 +8,20 @@
 import SwiftUI
 import SwiftData
 
-struct ListView: View {
-    @Query private var items: [Item]
-    @Environment(DataManager.self) private var dataManager
-    var body: some View {
-        List{
-            Button("+"){
-                let item = Item(name: "Item\(items.count)")
-                dataManager.container.mainContext.insert(item)
+    struct ListView: View {
+        @Query private var items: [Item]
+        @Environment(DataManager.self) private var dataManager
+        var body: some View {
+            List{
+                Button("+"){
+                    let item = Item(name: "Item\(items.count)")
+                    dataManager.container.mainContext.insert(item)
+                }
+                ForEach(items){item in
+                    Text(item.name)}
             }
-            ForEach(items){item in
-                Text(item.name)}
         }
     }
-}
 
 //#Preview {
 //    MainActor.assumeIsolated{

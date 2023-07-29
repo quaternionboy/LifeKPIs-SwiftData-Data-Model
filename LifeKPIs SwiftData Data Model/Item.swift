@@ -11,7 +11,8 @@ import SwiftData
 @Model
 final class Item {
     var name: String
-    var entries: [Entry] = []
+//    var entries: [Entry] = []
+    @Relationship(.cascade) var entries: [Entry] = []
     init(name: String) {
         self.name = name
     }
