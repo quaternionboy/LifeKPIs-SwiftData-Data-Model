@@ -13,6 +13,11 @@
 		FBB8949A2A44618F003DD593 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB894992A44618F003DD593 /* Preview Assets.xcassets */; };
 		FBB8949C2A44618F003DD593 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB8949B2A44618F003DD593 /* Item.swift */; };
 		FBCF8ED32A4C89D000CA9F2C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCF8ED22A4C89D000CA9F2C /* DataManager.swift */; };
+		FBEED6962A741A1400AB4FA3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEED6952A741A1400AB4FA3 /* Entry.swift */; };
+		FBEED6982A741F8500AB4FA3 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEED6972A741F8500AB4FA3 /* Helpers.swift */; };
+		FBEED69A2A74258900AB4FA3 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEED6992A74258900AB4FA3 /* CheckView.swift */; };
+		FBEED69C2A74259E00AB4FA3 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEED69B2A74259E00AB4FA3 /* ListView.swift */; };
+		FBEED69E2A742B9C00AB4FA3 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEED69D2A742B9C00AB4FA3 /* Preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		FBB894992A44618F003DD593 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBB8949B2A44618F003DD593 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FBCF8ED22A4C89D000CA9F2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FBEED6952A741A1400AB4FA3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		FBEED6972A741F8500AB4FA3 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		FBEED6992A74258900AB4FA3 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
+		FBEED69B2A74259E00AB4FA3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FBEED69D2A742B9C00AB4FA3 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +65,16 @@
 		FBB894912A44618E003DD593 /* LifeKPIs SwiftData Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				FBEED69D2A742B9C00AB4FA3 /* Preview.swift */,
 				FBB894922A44618E003DD593 /* LifeKPIs_SwiftData_Data_ModelApp.swift */,
 				FBCF8ED22A4C89D000CA9F2C /* DataManager.swift */,
+				FBEED6972A741F8500AB4FA3 /* Helpers.swift */,
 				FBB894942A44618E003DD593 /* ContentView.swift */,
+				FBEED6992A74258900AB4FA3 /* CheckView.swift */,
+				FBEED69B2A74259E00AB4FA3 /* ListView.swift */,
 				FBB894962A44618F003DD593 /* Assets.xcassets */,
 				FBB8949B2A44618F003DD593 /* Item.swift */,
+				FBEED6952A741A1400AB4FA3 /* Entry.swift */,
 				FBB894982A44618F003DD593 /* Preview Content */,
 			);
 			path = "LifeKPIs SwiftData Data Model";
@@ -143,10 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBEED69C2A74259E00AB4FA3 /* ListView.swift in Sources */,
+				FBEED6962A741A1400AB4FA3 /* Entry.swift in Sources */,
+				FBEED6982A741F8500AB4FA3 /* Helpers.swift in Sources */,
 				FBB894952A44618E003DD593 /* ContentView.swift in Sources */,
 				FBCF8ED32A4C89D000CA9F2C /* DataManager.swift in Sources */,
 				FBB8949C2A44618F003DD593 /* Item.swift in Sources */,
 				FBB894932A44618E003DD593 /* LifeKPIs_SwiftData_Data_ModelApp.swift in Sources */,
+				FBEED69E2A742B9C00AB4FA3 /* Preview.swift in Sources */,
+				FBEED69A2A74258900AB4FA3 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,19 @@ import SwiftData
 
 @Model
 final class Item {
-    var timestamp: Date
-    init(timestamp: Date) {
-        self.timestamp = timestamp
+    var name: String
+    var entries: [Entry] = []
+    init(name: String) {
+        self.name = name
+    }
+}
+
+extension Item {
+    @Transient var checkingDate: Date? {
+        if let last = entries.sorted(by: {$0.date<$1.date}).last{
+            return Calendar.current.startOfDay(for: last.date.addingTimeInterval(86_400))
+        }else{
+            return Calendar.current.startOfDay(for: Date(timeIntervalSinceNow: -86_400 * 10))
+        }
     }
 }
