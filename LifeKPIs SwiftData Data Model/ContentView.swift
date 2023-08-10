@@ -9,17 +9,32 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @State private var isPresented: Bool = false
     var body: some View {
-        TabView{
-            CheckView().tabItem { Text("Check") }
-            ListView().tabItem { Text("List") }
+        NavigationStack{
+            TabView{
+                CheckView().tabItem { Text("Check") }
+                ListView().tabItem { Text("List") }
+            }
+            .toolbar{
+                ToolbarItem(placement:.topBarLeading){
+                    Button("Dev Tools"){
+                        isPresented.toggle()
+                    }
+                }
+            }
+            .sheet(isPresented: $isPresented){
+                DevToolsView()
+            }
         }
     }
 }
 
 #Preview {
     let dataManager = DataManager(previewContainer: previewContainer)
-    return ContentView()
-        .modelContainer(dataManager.container)
-        .environment(dataManager)
+    return NavigationStack{
+        ContentView()
+            .modelContainer(dataManager.container)
+            .environment(dataManager)
+    }
 }

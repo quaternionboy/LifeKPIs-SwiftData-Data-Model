@@ -21,27 +21,16 @@ class DataManager {
         if let previewContainer = previewContainer {
             self.container = previewContainer
         }else{
-            self.container = try! ModelContainer(for: [Item.self, Entry.self])
+            self.container = try! ModelContainer(for: [Item.self])
         }
     }
 }
 
 extension DataManager {
     @MainActor func updateItemsToCheck(){
-        
-        let items: [(item:Item, checkingDate:Date?)] = {
-            let items: [Item] =  try! container.mainContext.fetch(FetchDescriptor<Item>()) //TBI try!
-            return items
-                .map {($0,
-                       $0.checkingDate)}
-                .filter {$0.checkingDate != nil}
-                .sorted {$0.checkingDate!<$1.checkingDate!}
-        }()
-        
-        itemsToCheck = items
-            .filter{$0.checkingDate!<=Calendar.current.startOfDay(for:Date())}
-            .map{$0.item}
-//            .sorted{$0.objectID<$1.objectID}//workaround
+        itemsToCheck = try! container.mainContext.fetch(FetchDescriptor<Item>())
+            .filter {$0.checkingDate != nil && $0.checkingDate!<=Calendar.current.startOfDay(for:Date())}
+            .sorted {$0.checkingDate!<$1.checkingDate!}
     }
 }
 

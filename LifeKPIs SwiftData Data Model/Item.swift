@@ -11,10 +11,10 @@ import SwiftData
 @Model
 final class Item {
     var name: String
-//    var entries: [Entry] = []
-    @Relationship(.cascade) var entries: [Entry] = []
+    @Relationship(deleteRule:.cascade) var entries: [Entry]
     init(name: String) {
         self.name = name
+        entries = []
     }
 }
 

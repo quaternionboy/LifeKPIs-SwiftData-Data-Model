@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CheckView: View {
     @Environment(DataManager.self) private var dataManager
+    @Query private var entries: [Entry]
     var body: some View {
+//        let _ = Self._printChanges()
         List{
             ForEach(dataManager.itemsToCheck){item in
                 Section(item.name){
@@ -28,10 +31,15 @@ struct CheckView: View {
                 }
             }
         }
-        .onAppear{dataManager.updateItemsToCheck()}
+        .onAppear{
+            dataManager.updateItemsToCheck()
+        }
     }
 }
 
-//#Preview {
-//    CheckView()
-//}
+#Preview {
+    let dataManager = DataManager(previewContainer: previewContainer)
+    return CheckView()
+        .modelContainer(dataManager.container)
+        .environment(dataManager)
+}
