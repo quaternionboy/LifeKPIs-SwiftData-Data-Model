@@ -9,32 +9,26 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @State private var isPresented: Bool = false
+    @Query(sort: \Item.name) private var items: [Item]
+    @Environment(\.modelContext) private var context
     var body: some View {
-        NavigationStack{
-            TabView{
-                CheckView().tabItem { Text("Check") }
-                ListView().tabItem { Text("List") }
+        let _ = Self._printChanges()
+        List{
+            ForEach(items){item in
+                Text("Name:\(item.name), checking date: \(item.checkingDate, format: Date.FormatStyle(date: .numeric, time: .standard))")
             }
-            .toolbar{
-                ToolbarItem(placement:.topBarLeading){
-                    Button("Dev Tools"){
-                        isPresented.toggle()
-                    }
-                }
-            }
-            .sheet(isPresented: $isPresented){
-                DevToolsView()
-            }
+        }.onAppear{
+            let item = Item(name:"Item name")
+            let entry = Entry(value: 0, date: Date())
+            item.entries.append(entry)
+            context.insert(item)
         }
     }
 }
 
-#Preview {
-    let dataManager = DataManager(previewContainer: previewContainer)
-    return NavigationStack{
-        ContentView()
-            .modelContainer(dataManager.container)
-            .environment(dataManager)
-    }
-}
+//#Preview {
+//    return NavigationStack{
+//        ContentView()
+//            .modelContainer(ModelCon...)
+//    }
+//}

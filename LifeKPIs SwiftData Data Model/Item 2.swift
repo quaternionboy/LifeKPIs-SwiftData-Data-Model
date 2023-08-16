@@ -11,18 +11,20 @@ import SwiftData
 @Model
 final class Item {
     var name: String
-    @Relationship(deleteRule:.cascade) var entries: [Entry]
     init(name: String) {
         self.name = name
-        entries = []
     }
 }
 
 extension Item {
     @Transient var checkingDate: Date {
-        let _ = entries
-        //...
-        return Date()
+        if let last = entries.sorted(by: {$0.date<$1.date}).last{
+            //....
+            return Date()
+        }else{
+           //...
+            return Date()
+        }
     }
 }
 
